@@ -1,3 +1,5 @@
+#This is only used in the local env for dev purpose
+#Dockerrun.aws.json will be used to build multi container app on AWS
 version: '3'
 services: 
   postgres:
@@ -20,6 +22,8 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./server
+    #Any files inside /app except node_module in the container will be synced with
+    #the server folder in the local env
     volumes:
       - /app/node_modules
       - ./server:/app

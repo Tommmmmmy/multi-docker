@@ -1,3 +1,4 @@
+#A travis config that automate the test, build and deployment to AWS which will utilize Dockerrun.aws.json
 language: generic
 sudo: required
 services:
